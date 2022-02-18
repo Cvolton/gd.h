@@ -80,6 +80,10 @@ namespace gd {
             inline int getPlayerColor2() const { return this->color2_; };
 
             inline std::string getPlayerName() const { return this->userName_; };
+
+            inline void setPlayerCube(int cube) { this->playerCube_ = cube; };
+            inline void setPlayerName(std::string name) { this->userName_ = name; };
+            inline void setUserID(int userID) { this->userID_ = userID; };
     };
 }
 
