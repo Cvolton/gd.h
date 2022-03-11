@@ -57,6 +57,11 @@ namespace gd {
             std::string lastScoreAge;
 
         public:
+            static GJUserScore* create() {
+                  return reinterpret_cast<GJUserScore*(__fastcall*)()>(
+                      gd::base + 0xC1660
+                  )();
+            }
             // static GJUserScore* create();
             // static GJUserScore* create(cocos2d::CCDictionary*);
 
