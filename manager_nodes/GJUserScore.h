@@ -71,6 +71,10 @@ namespace gd {
             inline IconType getIconType() const { return this->iconType_; };
             inline int getIconID() const { return this->iconID_; };
             inline int getUserID() const { return this->userID_; };
+            inline int getAccountID() const { return this->accountID_; };
+            inline int getMessageState() const { return this->messageState_; };
+            inline int getFriendStatus() const { return this->friendStatus_; };
+            inline int getCommentHistoryStatus() const { return this->commentHistoryStatus_; };
 
             inline int getPlayerCube() const { return this->playerCube_; };
             inline int getPlayerShip() const { return this->playerShip_; };
