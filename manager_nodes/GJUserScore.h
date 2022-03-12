@@ -69,6 +69,8 @@ namespace gd {
             // void mergeWithScore(GJUserScore*);
 
             inline IconType getIconType() const { return this->iconType_; };
+            inline int getIconID() const { return this->iconID_; };
+            inline int getUserID() const { return this->userID_; };
 
             inline int getPlayerCube() const { return this->playerCube_; };
             inline int getPlayerShip() const { return this->playerShip_; };
