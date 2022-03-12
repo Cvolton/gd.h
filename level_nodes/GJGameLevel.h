@@ -220,6 +220,20 @@ namespace gd {
 
             return ret;
         }
+
+        std::string getUnpackedLevelDescription() {
+            std::string ret;
+
+            reinterpret_cast<void(__thiscall*)(
+                GJGameLevel*, std::string*
+            )>(
+                base + 0xBF890
+            )(
+                this, &ret
+            );
+
+            return ret;
+        }
     };
 
 }
