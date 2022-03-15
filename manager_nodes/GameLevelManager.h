@@ -63,6 +63,13 @@ class GJGameLevel;
         inline static gd::GJGameLevel* createNewLevel() {
             return reinterpret_cast<gd::GJGameLevel*(__stdcall*)()>( gd::base + 0xa0db0 )();
         }
+
+        static void storeUserNames(std::string str) {
+            reinterpret_cast<void(__fastcall*)(std::string)>(
+                gd::base + 0xA1840
+            )(str);
+            __asm add esp, 0x18
+        }
     };
 
 }
