@@ -21,6 +21,7 @@ namespace gd {
         kSearchTypeFindUsers      = 14,
         kSearchTypeHallOfFame     = 16,
         kSearchTypeSimilar        = 18,
+        kSearchType19             = 19,
         kSearchTypeMyLevels       = 98,
         kSearchTypeSavedLevels    = 99,
     };
