@@ -60,6 +60,12 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/SetupPulsePopup.h"
 #include "layers_scenes_transitions_nodes/ColorSelectPopup.h"
 #include "layers_scenes_transitions_nodes/MoreOptionsLayer.h"
+#include "layers_scenes_transitions_nodes/InfoLayer.h"
+#include "layers_scenes_transitions_nodes/LevelBrowserLayer.h"
+#include "layers_scenes_transitions_nodes/ProfilePage.h"
+#include "layers_scenes_transitions_nodes/LevelInfoLayer.h"
+#include "layers_scenes_transitions_nodes/LevelCell.h"
+#include "layers_scenes_transitions_nodes/CommentCell.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"
@@ -92,6 +98,7 @@ enum FMOD_RESULT;
 #include "level_nodes/LevelSettingsObject.h"
 #include "level_nodes/SongInfoObject.h"
 #include "level_nodes/ColorAction.h"
+#include "level_nodes/GJComment.h"
 
 #include "sprite_nodes/CCSpritePlus.h"
 #include "sprite_nodes/ColorActionSprite.h"

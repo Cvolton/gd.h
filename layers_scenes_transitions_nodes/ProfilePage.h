@@ -1,0 +1,33 @@
+#ifndef __PROFILEPAGE_H__
+#define __PROFILEPAGE_H__
+
+#include <gd.h>
+
+namespace gd {
+
+    class GJUserScore;
+
+    class ProfilePage : public gd::FLAlertLayer {
+    public:
+        //PAD(472 - sizeof(gd::FLAlertLayer));
+        PAD(488 - sizeof(gd::FLAlertLayer));
+        gd::GJUserScore* score; //488-492
+        int something;
+        //564
+
+        /*static ProfilePage* create(int accountID, bool a2) {
+            return reinterpret_cast<ProfilePage*(__fastcall*)(int, bool)>(
+                gd::base + 0x20EE50
+            )(accountID, a2);
+        }
+
+        ProfilePage* loadPageFromUserInfo(gd::GJUserScore* score) {
+            return reinterpret_cast<ProfilePage*(__fastcall*)(ProfilePage*, gd::GJUserScore*)>(
+                gd::base + 0x210040
+            )(this, score);
+        }*/
+    };
+
+}
+
+#endif
