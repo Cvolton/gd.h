@@ -9,6 +9,13 @@ namespace gd {
 
     class LevelBrowserLayer : public cocos2d::CCLayer {
     public:
+        PAD(312 - sizeof(cocos2d::CCLayer));
+        CCMenuItemSpriteExtra* nextBtn;
+        CCMenuItemSpriteExtra* prevBtn;
+        PAD(360 - 320);
+        int total;
+        int from;
+        int to;
 
         static cocos2d::CCScene* scene(gd::GJSearchObject* searchObject) {
             return reinterpret_cast<cocos2d::CCScene*(__fastcall*)(gd::GJSearchObject*)>(
