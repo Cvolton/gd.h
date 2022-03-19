@@ -9,6 +9,7 @@ namespace gd {
     class GJUserScore;
 
     //members stolen from wylies gd decomp
+    // m_nTotalItems moved before m_nPageStartIdx because thats the actual order on windows at least
     class InfoLayer : public FLAlertLayer {
     public:
         PAD(472 - sizeof(gd::FLAlertLayer));
@@ -26,9 +27,9 @@ namespace gd {
         gd::CCMenuItemSpriteExtra* m_pReportBtn;
         gd::CCMenuItemSpriteExtra* m_pCommentsBtn;
         gd::CCMenuItemSpriteExtra* m_pRefreshCommentsBtn;
+        int m_nTotalItems;
         int m_nPageStartIdx;
         int m_nPageEndIdx;
-        int m_nTotalItems;
         int m_nPageNumber;
         bool m_bCanUpdateUserScore;
         bool m_bCommentHistory;
