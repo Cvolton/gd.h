@@ -39,6 +39,10 @@ namespace gd {
                 gd::base + 0x14F4F0
             )(level, score);
         }
+
+        void loadPage(int page, bool reload) {
+            reinterpret_cast<void(__thiscall*)(InfoLayer*, int, bool)>(base + 0x151E70)(this, page, reload);
+        }
     };
 
 }

@@ -29,6 +29,12 @@ namespace gd {
 			__asm add esp, 0x14
 			return pRet;
 		}
+
+		void setString(const char* txt) {
+			reinterpret_cast<void(__thiscall*)(ButtonSprite*, const char*)>(
+				base + 0x14030
+			)(this, txt);
+		}
 	};
 	#pragma runtime_checks("s", restore)
 }
