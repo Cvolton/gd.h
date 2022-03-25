@@ -52,6 +52,13 @@ namespace gd {
 			__asm add esp, 0x20
 			return pRet;
 		}
+
+		void setString(std::string const& str) {
+			reinterpret_cast<void(__thiscall*)(
+				TextArea*, std::string
+			)>(base + 0x33480)(this, str);
+			//__asm add esp, 0x20
+		}
 	};
 	#pragma runtime_checks("s", restore)
 }
