@@ -15,7 +15,8 @@ namespace gd {
 		cocos2d::CCMenu* m_pButtonMenu;
 		int m_nControlConnected; //?
 		cocos2d::CCObject* m_pTarget;
-		PAD(8);
+		cocos2d::CCObject* m_pParent;
+		PAD(4);
 		cocos2d::CCLayer* m_pLayer;
 		int m_nZOrder2;
 		bool m_bNoElasticity;
@@ -126,6 +127,9 @@ namespace gd {
 					)(target, title, btn1, btn2, width, caption);
 			__asm add esp, 0x24
 			return pRet;
+		}
+		void setParentFLAlert(cocos2d::CCObject* target){
+			m_pParent = target;
 		}
 	};
 	#pragma runtime_checks("s", restore)
