@@ -130,6 +130,7 @@ namespace gd {
 		}
 		void setParentFLAlert(cocos2d::CCObject* target){
 			m_pParent = target;
+			//m_pTarget = target;
 		}
 	};
 	#pragma runtime_checks("s", restore)
