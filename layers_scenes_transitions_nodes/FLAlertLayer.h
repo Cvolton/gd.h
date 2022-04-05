@@ -99,6 +99,11 @@ namespace gd {
 				base + 0x23380
 				)(this, btn);
 		}
+		void onClose(cocos2d::CCObject* btn) {
+			return reinterpret_cast<void(__thiscall*)(FLAlertLayer*, cocos2d::CCObject*)>(
+				base + 0x49C60
+				)(this, btn);
+		}
 		/*FLAlertLayer supports colors of text for the caption. wrap desired text in "<cx></c>"
 			* where x is the color desired. colors are:
 			* r - red

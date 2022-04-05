@@ -20,7 +20,8 @@ class GJGameLevel;
         // dear robtop, have you heard of a set
         // all of these just have the value of CCString("1")
         cocos2d::CCDictionary* m_likedLevels; // https://github.com/Wyliemaster/gddocs/blob/client/docs/resources/client/gamesave/GLM.md#glm_12
-        cocos2d::CCDictionary* m_ratedLevels;
+        cocos2d::CCDictionary* m_ratedLevels; // 32
+        cocos2d::CCDictionary* m_pRatedDemons;
         cocos2d::CCDictionary* m_reportedLevels;
         // the names of the folders
         cocos2d::CCDictionary* m_onlineFolders;
@@ -28,14 +29,19 @@ class GJGameLevel;
         cocos2d::CCDictionary* m_dailyLevels;
         int m_dailyTimeLeft; // i cant figure out the unit
         int m_dailyID;
-        int m_dailyID_;
+        int m_dailyID_; // 64
         PAD(4);
         int m_weeklyTimeLeft;
         int m_weeklyID;
         int m_weeklyID_; // ? (this was 2 lower than the other weekly id)
         cocos2d::CCDictionary* m_gauntletLevels;
-        PAD(8);
-        cocos2d::CCDictionary* unkDict14; // some cache thing it seems (values are strings)
+        cocos2d::CCDictionary* unkDict13;
+        PAD(4);
+        PAD(4);
+        PAD(4);
+        PAD(4);
+        PAD(4);
+        cocos2d::CCDictionary* m_pTimerDict; // 108
         cocos2d::CCDictionary* m_knownUsers; // ? not sure 14C
         cocos2d::CCDictionary* m_accountIDtoUserIDDict; // 150
         cocos2d::CCDictionary* m_userIDtoAccountIDDict; // 154
