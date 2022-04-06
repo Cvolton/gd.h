@@ -87,6 +87,7 @@ enum FMOD_RESULT;
 #include "manager_nodes/GJEffectManager.h"
 #include "manager_nodes/MusicDownloadManager.h"
 #include "manager_nodes/ObjectToolbox.h"
+#include "manager_nodes/GameStatsManager.h"
 
 #include "menu_nodes/CCMenuItemSpriteExtra.h"
 #include "menu_nodes/CCMenuItemToggler.h"
@@ -101,6 +102,7 @@ enum FMOD_RESULT;
 #include "level_nodes/SongInfoObject.h"
 #include "level_nodes/ColorAction.h"
 #include "level_nodes/GJComment.h"
+#include "level_nodes/GJChallengeItem.h"
 
 #include "sprite_nodes/CCSpritePlus.h"
 #include "sprite_nodes/ColorActionSprite.h"
