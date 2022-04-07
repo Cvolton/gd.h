@@ -82,22 +82,7 @@ class GJGameLevel;
         }
 
         void resetStoredUserInfo(int id) { //inlined on windows i think
-            m_pTimerDict->writeToFile("c:/users/brabe/documents/m_pTimerDict.plist");
-            m_knownUsers->writeToFile("c:/users/brabe/documents/m_knownUsers.plist");
-            m_accountIDtoUserIDDict->writeToFile("c:/users/brabe/documents/m_accountIDtoUserIDDict.plist");
-            m_userIDtoAccountIDDict->writeToFile("c:/users/brabe/documents/m_userIDtoAccountIDDict.plist");
-            storedLevels->writeToFile("c:/users/brabe/documents/storedLevels.plist");
-            unkDict19->writeToFile("c:/users/brabe/documents/unkDict19.plist");
-            unkDict20->writeToFile("c:/users/brabe/documents/unkDict20.plist");
-            unkDict21->writeToFile("c:/users/brabe/documents/unkDict21.plist");
-            unkDict22->writeToFile("c:/users/brabe/documents/unkDict22.plist");
-            unkDict23->writeToFile("c:/users/brabe/documents/unkDict23.plist");
-            unkDict24->writeToFile("c:/users/brabe/documents/unkDict24.plist");
-            storedUserInfo->writeToFile("c:/users/brabe/documents/storedUserInfo.plist");
-            unkDict26->writeToFile("c:/users/brabe/documents/unkDict26.plist");
-            unkDict27->writeToFile("c:/users/brabe/documents/unkDict27.plist");
-            unkDict28->writeToFile("c:/users/brabe/documents/unkDict28.plist");
-            //storedUserInfo->removeObjectForKey(id);
+            storedUserInfo->removeObjectForKey(id);
         }
 
         void resetAccountComments(int id){
