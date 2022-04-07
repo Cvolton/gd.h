@@ -26,6 +26,8 @@ namespace gd {
                 gd::base + 0x210040
             )(this, score);
         }*/
+
+        //onUpdate 0x20FA20
     };
 
 }

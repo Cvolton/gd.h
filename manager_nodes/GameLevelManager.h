@@ -37,22 +37,18 @@ class GJGameLevel;
         cocos2d::CCDictionary* m_gauntletLevels;
         cocos2d::CCDictionary* unkDict13;
         PAD(4);
-        PAD(4);
-        PAD(4);
-        PAD(4);
-        PAD(4);
-        cocos2d::CCDictionary* m_pTimerDict; // 108
-        cocos2d::CCDictionary* m_knownUsers; // ? not sure 14C
-        cocos2d::CCDictionary* m_accountIDtoUserIDDict; // 150
-        cocos2d::CCDictionary* m_userIDtoAccountIDDict; // 154
-        cocos2d::CCDictionary* unkDict18; // cached lvls?? (values are arrays)
-        cocos2d::CCDictionary* unkDict19; // more cache stuff (values are strings)
-        cocos2d::CCDictionary* unkDict20;
-        cocos2d::CCDictionary* unkDict21;
-        cocos2d::CCDictionary* unkDict22;
-        cocos2d::CCDictionary* unkDict23;
-        cocos2d::CCDictionary* unkDict24;
-        cocos2d::CCDictionary* unkDict25;
+        cocos2d::CCDictionary* m_pTimerDict; // 108 / 344
+        cocos2d::CCDictionary* m_knownUsers; // 348
+        cocos2d::CCDictionary* m_accountIDtoUserIDDict; // 352
+        cocos2d::CCDictionary* m_userIDtoAccountIDDict; // 356
+        cocos2d::CCDictionary* storedLevels; // cached lvls?? (values are arrays) / 360
+        cocos2d::CCDictionary* unkDict19; // more cache stuff (values are strings) / 364
+        cocos2d::CCDictionary* unkDict20; // 368
+        cocos2d::CCDictionary* unkDict21; // 372
+        cocos2d::CCDictionary* unkDict22; // 376
+        cocos2d::CCDictionary* unkDict23; // 380
+        cocos2d::CCDictionary* unkDict24; // 384
+        cocos2d::CCDictionary* storedUserInfo; // 388
         cocos2d::CCDictionary* unkDict26;
         cocos2d::CCDictionary* unkDict27;
         cocos2d::CCDictionary* unkDict28;
@@ -75,6 +71,50 @@ class GJGameLevel;
                 gd::base + 0xA1840
             )(str);
             __asm add esp, 0x18
+        }
+
+        void getGJUserInfo(int something) {
+            reinterpret_cast<void(__thiscall*)(GameLevelManager*, int)>(base + 0xB00B0)(this, something);
+        }
+
+        cocos2d::CCArray* getStoredOnlineLevels(const char* a) {
+            return reinterpret_cast<cocos2d::CCArray*(__thiscall*)(GameLevelManager*, const char*)>(base + 0xA3A90)(this, a);
+        }
+
+        void resetStoredUserInfo(int id) { //inlined on windows i think
+            m_pTimerDict->writeToFile("c:/users/brabe/documents/m_pTimerDict.plist");
+            m_knownUsers->writeToFile("c:/users/brabe/documents/m_knownUsers.plist");
+            m_accountIDtoUserIDDict->writeToFile("c:/users/brabe/documents/m_accountIDtoUserIDDict.plist");
+            m_userIDtoAccountIDDict->writeToFile("c:/users/brabe/documents/m_userIDtoAccountIDDict.plist");
+            storedLevels->writeToFile("c:/users/brabe/documents/storedLevels.plist");
+            unkDict19->writeToFile("c:/users/brabe/documents/unkDict19.plist");
+            unkDict20->writeToFile("c:/users/brabe/documents/unkDict20.plist");
+            unkDict21->writeToFile("c:/users/brabe/documents/unkDict21.plist");
+            unkDict22->writeToFile("c:/users/brabe/documents/unkDict22.plist");
+            unkDict23->writeToFile("c:/users/brabe/documents/unkDict23.plist");
+            unkDict24->writeToFile("c:/users/brabe/documents/unkDict24.plist");
+            storedUserInfo->writeToFile("c:/users/brabe/documents/storedUserInfo.plist");
+            unkDict26->writeToFile("c:/users/brabe/documents/unkDict26.plist");
+            unkDict27->writeToFile("c:/users/brabe/documents/unkDict27.plist");
+            unkDict28->writeToFile("c:/users/brabe/documents/unkDict28.plist");
+            //storedUserInfo->removeObjectForKey(id);
+        }
+
+        void resetAccountComments(int id){
+            int i = 0;
+            while(true){
+                auto key = this->getAccountCommentKey(id, i++);
+                auto levels = getStoredOnlineLevels(key);
+                if(levels != nullptr){
+                    storedLevels->removeObjectForKey(key);
+                }else{
+                    break;
+                }
+            }
+        }
+
+        const char* getAccountCommentKey(int a2, int a3){
+            return cocos2d::CCString::createWithFormat("a_%i_%i", a2, a3)->getCString();
         }
     };
 
