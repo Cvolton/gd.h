@@ -12,7 +12,9 @@ namespace gd {
         //PAD(472 - sizeof(gd::FLAlertLayer));
         PAD(488 - sizeof(gd::FLAlertLayer));
         gd::GJUserScore* score; //488-492
-        int something;
+        int something; //492-496
+        PAD(552 - 496); //this is at 532 on android???
+        cocos2d::CCArray* objectsInMenu;
         //564
 
         /*static ProfilePage* create(int accountID, bool a2) {
