@@ -50,6 +50,14 @@ namespace gd {
                 base + 0xF1E50
             )();
         }
+
+        int getAwardedCurrencyForLevel(GJGameLevel* level) {
+            return reinterpret_cast<int(__thiscall*)(GameStatsManager*, GJGameLevel*)>(base + 0xF83E0)(this, level);
+        }
+
+        int getBaseCurrencyForLevel(GJGameLevel* level) {
+            return reinterpret_cast<int(__thiscall*)(GameStatsManager*, GJGameLevel*)>(base + 0xF8530)(this, level);
+        }
     };
 
 }
