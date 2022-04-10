@@ -16,7 +16,7 @@ namespace gd {
 				base + 0x57E60
 				)(this);
 		}
-		virtual bool init(cocos2d::CCArray* entries, int type, float width, float height) {
+		/*virtual bool init(cocos2d::CCArray* entries, int type, float width, float height) {
 			__asm {
 				movss xmm2, width
 				movss xmm3, height
@@ -24,7 +24,7 @@ namespace gd {
 			return reinterpret_cast<bool(__thiscall*)(CustomListView*, int, int)>(
 				base + 0x10C20
 				)(this, 0, type);
-		}
+		}*/
 
 	public:
 		static CustomListView* create(cocos2d::CCArray* entries, int type, float width, float height) {

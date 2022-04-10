@@ -17,7 +17,8 @@ namespace gd {
 		int m_eType; //? probably wrong type
 		float m_fWidth;
 		float m_fHeight;
-		PAD(8);
+		float m_fItemSeparation;
+		PAD(4);
 
 	public:
 		//TableViewDelegate vtable
@@ -37,6 +38,20 @@ namespace gd {
 			return reinterpret_cast<TableViewCell* (__thiscall*)(char*, CCIndexPath&, TableView*)>(
 				base + 0x10E70
 				)(reinterpret_cast<char*>(this) + 0x120, path, view);
+		}
+
+		virtual ~BoomListView() {
+			CC_SAFE_RELEASE(m_pEntries);
+		}
+		
+		bool init(cocos2d::CCArray* entries, int btype, float width, float height) {
+			__asm {
+				movss xmm2, height
+				movss xmm3, width
+			}
+			return reinterpret_cast<bool(__thiscall*)(BoomListView*, cocos2d::CCArray*, int, int)>(
+				base + 0x10c20
+			)(this, entries, 0, btype);
 		}
 
 		//own vtable

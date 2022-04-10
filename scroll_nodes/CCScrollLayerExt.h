@@ -6,21 +6,32 @@
 namespace gd {
 
 	class CCContentLayer;
+	class CCScrollLayerExtDelegate;
 
 	class CCScrollLayerExt : public cocos2d::CCLayer {
 	protected:
-		PAD(4);
-		cocos2d::CCPoint m_obUnknown1;
-		cocos2d::CCPoint m_obUnknown2;
-		PAD(8);
-		bool m_bUnknown1;
-		bool m_bUnknown2;
-		cocos2d::CCLayerColor* m_pLayer;
-		PAD(8);
-		CCContentLayer* m_pContentLayer;
-		PAD(16);
-		float m_fScale1; //?
-		float m_fScale2; //?
+		cocos2d::CCTouch* m_pTouch;	// 0x11c
+		cocos2d::CCPoint m_obTouchPosition;		 // 0x120
+		cocos2d::CCPoint m_obTouchStartPosition; // 0x128
+		PAD(8)
+		bool m_bTouchDown;	// 0x138
+		bool m_bNotAtEndOfScroll;	// 0x139
+		PAD(2)
+		cocos2d::CCLayerColor* m_pVerticalScrollbar;	// 0x13c
+		cocos2d::CCLayerColor* m_pHorizontalScrollbar;	// 0x140
+		CCScrollLayerExtDelegate* m_pDelete;	// 0x144
+		CCContentLayer* m_pContentLayer;	// 0x148
+		bool m_bCutContent; // 0x14c
+		bool m_bVScrollbarVisible;	// 0x14d
+		bool m_bHScrollbarVisible;	// 0x14e
+		bool m_bDisableHorizontal; // 0x14f
+		bool m_bDisableVertical; // 0x150
+		bool m_bDisableMovement; // 0x151
+		PAD(2)
+		float m_fScrollLimitTop; // 0x154
+		float m_fScrollLimitBottom; // 0x158
+		float m_fPeekLimitTop; // 0x15c
+		float m_fPeekLimitBottom; // 0x160
 
 	protected:
 		CCScrollLayerExt(cocos2d::CCRect rect) {
@@ -40,6 +51,18 @@ namespace gd {
 			return reinterpret_cast<void(__thiscall*)(CCScrollLayerExt*)>(
 				base + 0x1C090
 				)(this);
+		}
+		void moveToTopWithOffset(float fOffset) {
+			__asm { movss xmm1, fOffset }
+
+			reinterpret_cast<void(__thiscall*)(CCScrollLayerExt*)>(
+				base + 0x1b420
+			)(this);
+		}
+		void moveToTop() {
+			reinterpret_cast<void(__thiscall*)(CCScrollLayerExt*)>(
+				base + 0x1b4a0
+			)(this);
 		}
 	};
 
