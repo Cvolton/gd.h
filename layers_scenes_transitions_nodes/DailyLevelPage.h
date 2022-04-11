@@ -7,9 +7,9 @@ namespace gd {
 
     class GJSearchObject;
 
-    class DailyLevelPage : public cocos2d::CCLayer {
+    class DailyLevelPage : public gd::FLAlertLayer {
     public:
-        PAD(493 - sizeof(cocos2d::CCLayer));
+        PAD(493 - sizeof(gd::FLAlertLayer));
         bool isWeekly;
     };
 
