@@ -5,10 +5,11 @@
 
 namespace gd {
     class GJAccountManager : public cocos2d::CCNode {
-        protected:
-            PAD(0x4)
+        public:
+            PAD(0x4);
             std::string m_sPassword;
             std::string m_sUsername;
+            int accountID;
 
         public:
             static GJAccountManager* sharedState() {
