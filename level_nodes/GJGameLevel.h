@@ -234,6 +234,16 @@ namespace gd {
 
             return ret;
         }
+
+        const char* getCoinKey(int coin) {
+            return reinterpret_cast<const char*(__thiscall*)(
+                GJGameLevel*, int
+            )>(
+                base + 0xBDA50
+            )(
+                this, coin
+            );
+        }
     };
 
 }
