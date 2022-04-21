@@ -9,7 +9,7 @@ namespace gd {
 	class CCScrollLayerExtDelegate;
 
 	class CCScrollLayerExt : public cocos2d::CCLayer {
-	protected:
+	public:
 		cocos2d::CCTouch* m_pTouch;	// 0x11c
 		cocos2d::CCPoint m_obTouchPosition;		 // 0x120
 		cocos2d::CCPoint m_obTouchStartPosition; // 0x128
