@@ -54,7 +54,8 @@ class GJGameLevel;
         cocos2d::CCDictionary* unkDict28;
         std::string unkStr1;
         std::string unkStr2; // im not sure if this is actually is a std::string, although it looks like one
-        PAD(92);
+        int leaderboardState;
+        PAD(88);
         std::string unkStr3;
         cocos2d::CCString* unkStr4;
         
@@ -75,6 +76,10 @@ class GJGameLevel;
 
         void getGJUserInfo(int something) {
             reinterpret_cast<void(__thiscall*)(GameLevelManager*, int)>(base + 0xB00B0)(this, something);
+        }
+
+        void updateUserScore() {
+            reinterpret_cast<void(__thiscall*)(GameLevelManager*)>(base + 0xADA60)(this);
         }
 
         cocos2d::CCArray* getStoredOnlineLevels(const char* a) {

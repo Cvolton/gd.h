@@ -68,6 +68,7 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/CommentCell.h"
 #include "layers_scenes_transitions_nodes/DailyLevelPage.h"
 #include "layers_scenes_transitions_nodes/LevelLeaderboard.h"
+#include "layers_scenes_transitions_nodes/LeaderboardsLayer.h"
 
 #include "scroll_nodes/CCContentLayer.h"
 #include "scroll_nodes/CCIndexPath.h"
