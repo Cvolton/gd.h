@@ -10,11 +10,10 @@ namespace gd {
     class CCMenuItemToggler;
     class TextArea;
 
-    class LevelPage :
-        public cocos2d::CCNode
+    class LevelPage
     {
         public:
-            PAD(292 - sizeof(CCNode));
+            PAD(292);
             GJGameLevel* m_pLevel;
     };
 
