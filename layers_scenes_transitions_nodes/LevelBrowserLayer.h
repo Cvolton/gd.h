@@ -30,6 +30,21 @@ namespace gd {
         }
     };
 
+    class LevelSearchLayer : public cocos2d::CCLayer {
+    public:
+        PAD(12);
+        CCTextInputNode* input;
+    };
+
+    class MoreSearchLayer : public FLAlertLayer {
+    public:
+        static MoreSearchLayer* create() {
+            return reinterpret_cast<MoreSearchLayer*(__fastcall*)()>(
+                gd::base + 0x182520
+            )();
+        }
+    };
+
 }
 
 #endif
