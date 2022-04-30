@@ -26,6 +26,7 @@ namespace gd {
         kSearchType19             = 19,
         kSearchTypeMyLevels       = 98,
         kSearchTypeSavedLevels    = 99,
+        kSearchTypeFavorite       = 100,
     };
 
     class GJSearchObject : public cocos2d::CCNode {
