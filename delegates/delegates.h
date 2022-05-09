@@ -87,6 +87,12 @@ namespace gd {
         virtual void levelUpdateFailed(int);
     };
 
+    class OnlineListDelegate {
+        virtual void loadListFinished(cocos2d::CCArray*, const char*) {};
+        virtual void loadListFailed(const char*) {};
+        virtual void setupPageInfo(std::string, const char*) {};
+    };
+
     class UploadActionDelegate {
         virtual void uploadActionFinished(int, int) {};
         virtual void uploadActionFailed(int, int) {};

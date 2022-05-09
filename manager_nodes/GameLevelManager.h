@@ -55,7 +55,30 @@ class GJGameLevel;
         std::string unkStr1;
         std::string unkStr2; // im not sure if this is actually is a std::string, although it looks like one
         int leaderboardState;
-        PAD(88);
+        bool m_bUnkEditLevelLayerOnBack;
+
+        OnlineListDelegate* m_pOnlineListDelegate;
+        LevelDownloadDelegate* m_pLevelDownloadDelegate;
+        void* m_pLevelCommentDelegate;
+        void* m_pCommentUploadDelegate;
+        void* m_pLevelUploadDelegate;
+        LevelUpdateDelegate* m_pLevelUpdateDelegate;
+        void* m_pLeaderboardManagerDelegate;
+        LevelDeleteDelegate* m_pLevelDeleteDelegate;
+        void* m_pUserInfoDelegate;
+        void* m_pLevelManagerDelegate;
+        void* m_pUnkDelegate;
+        void* m_pFriendRequestDelegate;
+        void* m_pMessageListDelegate;
+        void* m_pDownloadMessageDelegate;
+        void* m_pUploadMessageDelegate;
+        void* m_pGJRewardDelegate;
+        void* m_pGJChallengeDelegate;
+        void* m_pGJDailyLevelDelegate;
+        void* m_pMusicDownloadDelegate;
+        int m_nUnkDownload;
+        int unk;
+
         std::string unkStr3;
         cocos2d::CCString* unkStr4;
         
@@ -76,6 +99,10 @@ class GJGameLevel;
 
         void getGJUserInfo(int something) {
             reinterpret_cast<void(__thiscall*)(GameLevelManager*, int)>(base + 0xB00B0)(this, something);
+        }
+
+        void getOnlineLevels(GJSearchObject* searchObj) {
+            reinterpret_cast<void(__thiscall*)(GameLevelManager*, GJSearchObject*)>(base + 0xA7BC0)(this, searchObj);
         }
 
         void updateUserScore() {
