@@ -62,6 +62,13 @@ namespace gd {
                       gd::base + 0xC1660
                   )();
             }
+
+
+            static GJUserScore* create(cocos2d::CCDictionary* dict) {
+                  return reinterpret_cast<GJUserScore*(__fastcall*)(cocos2d::CCDictionary*)>(
+                      gd::base + 0xC0750
+                  )(dict);
+            }
             // static GJUserScore* create();
             // static GJUserScore* create(cocos2d::CCDictionary*);
 

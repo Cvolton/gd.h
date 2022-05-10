@@ -90,7 +90,7 @@ class GJGameLevel;
             return reinterpret_cast<gd::GJGameLevel*(__stdcall*)()>( gd::base + 0xa0db0 )();
         }
 
-        static void storeUserNames(std::string str) {
+        static void storeUserNames(std::string str) { //why is this static what this cant work
             reinterpret_cast<void(__fastcall*)(std::string)>(
                 gd::base + 0xA1840
             )(str);
@@ -111,6 +111,18 @@ class GJGameLevel;
 
         cocos2d::CCArray* getStoredOnlineLevels(const char* a) {
             return reinterpret_cast<cocos2d::CCArray*(__thiscall*)(GameLevelManager*, const char*)>(base + 0xA3A90)(this, a);
+        }
+
+        cocos2d::CCArray* createAndGetScores(std::string result, int scoreType) { //scoreType is actually GJScoreType //this doesnt work
+            auto pRet = reinterpret_cast<cocos2d::CCArray*(__thiscall*)(GameLevelManager*, std::string, int)>(base + 0xA2780)(this, result, scoreType);
+            //__asm add esp, 0x18
+            return pRet;
+        }
+
+        cocos2d::CCDictionary* responseToDict(std::string result, bool useTilde) { //this doesnt work either
+            auto pRet = reinterpret_cast<cocos2d::CCDictionary*(__thiscall*)(GameLevelManager*, std::string, bool)>(base + 0xBBA50)(this, result, useTilde);
+            //__asm add esp, 0x18
+            return pRet;
         }
 
         void resetStoredUserInfo(int id) { //inlined on windows i think

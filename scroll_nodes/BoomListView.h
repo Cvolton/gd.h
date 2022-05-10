@@ -15,8 +15,8 @@ namespace gd {
 		TableView* m_pTableView;
 		cocos2d::CCArray* m_pEntries;
 		int m_eType; //? probably wrong type
-		float m_fWidth;
 		float m_fHeight;
+		float m_fWidth;
 		float m_fItemSeparation;
 		PAD(4);
 

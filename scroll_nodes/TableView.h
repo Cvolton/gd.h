@@ -131,6 +131,22 @@ namespace gd {
             )(this, index);
         }
     };
+
+	class GJScoreCell : public TableViewCell {
+    public:
+    	//0x62380 onViewProfile
+    	//0x624A0 FLAlert_Clicked
+        void loadFromScore(GJUserScore* score) {
+            reinterpret_cast<void(__thiscall*)(GJScoreCell*, GJUserScore*)>(
+                base + 0x61440
+            )(this, score);
+        }
+        void updateBGColor(unsigned int index) {
+            reinterpret_cast<void(__thiscall*)(TableViewCell*, unsigned int)>(
+                base + 0x5C6B0
+            )(this, index);
+        }
+    };
 }
 
 #endif
