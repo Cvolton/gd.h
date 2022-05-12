@@ -31,7 +31,7 @@ namespace gd {
 
     class GJSearchObject : public cocos2d::CCNode {
     public:
-        SearchType m_nScreenID;
+        SearchType m_nScreenID; //236 android
         std::string m_sSearchQuery;
         std::string m_sDifficulty;
         std::string m_sLength;
@@ -39,7 +39,7 @@ namespace gd {
         bool m_bStarFilter;
         bool m_bNoStarFilter;
         int m_nTotal;
-        bool m_bUncompletedFilter;
+        bool m_bUncompletedFilter; //264 android
         bool m_bCompletedFilter;
         bool m_bFeaturedFilter;
         bool m_bOriginalFilter;

@@ -125,6 +125,12 @@ class GJGameLevel;
             return pRet;
         }
 
+        cocos2d::CCDictionary* getSavedLevels(bool favorite, int folderID) { //this doesnt work either
+            auto pRet = reinterpret_cast<cocos2d::CCDictionary*(__thiscall*)(GameLevelManager*, bool, int)>(base + 0xA2960)(this, favorite, folderID);
+            //__asm add esp, 0x18
+            return pRet;
+        }
+
         void resetStoredUserInfo(int id) { //inlined on windows i think
             storedUserInfo->removeObjectForKey(id);
         }
