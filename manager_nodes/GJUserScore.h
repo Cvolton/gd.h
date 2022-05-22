@@ -94,6 +94,7 @@ namespace gd {
             inline bool getGlowEnabled() const { return this->glowEnabled_; };
             inline int getPlayerExplosion() const { return this->playerExplosion_; };
             inline int getPlayerRank() const { return this->playerRank_; };
+            inline int getGlobalRank() const { return this->globalRank_; };
 
             inline int getPlayerColor1() const { return this->color1_; };
             inline int getPlayerColor2() const { return this->color2_; };
