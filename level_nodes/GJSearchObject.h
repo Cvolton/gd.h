@@ -24,6 +24,8 @@ namespace gd {
         kGJSearchTypeFeaturedGDW  = 17,
         kSearchTypeSimilar        = 18,
         kSearchType19             = 19,
+        kSearchTypeDaily          = 21,
+        kSearchTypeWeekly         = 22,
         kSearchTypeMyLevels       = 98,
         kSearchTypeSavedLevels    = 99,
         kSearchTypeFavorite       = 100,
