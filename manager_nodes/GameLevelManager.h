@@ -90,11 +90,18 @@ class GJGameLevel;
             return reinterpret_cast<gd::GJGameLevel*(__stdcall*)()>( gd::base + 0xa0db0 )();
         }
 
-        static void storeUserNames(std::string str) { //why is this static what this cant work
-            reinterpret_cast<void(__fastcall*)(std::string)>(
+        void storeUserNames(std::string str) {
+            reinterpret_cast<void(__thiscall*)(GameLevelManager*, std::string)>(
                 gd::base + 0xA1840
-            )(str);
-            __asm add esp, 0x18
+            )(this, str);
+            //__asm add esp, 0x18
+        }
+
+        void storeUserName(int userID, int accountID, std::string str) {
+            reinterpret_cast<void(__thiscall*)(GameLevelManager*, int, int, std::string)>(
+                gd::base + 0xA1A70
+            )(this, userID, accountID, str);
+            //__asm add esp, 0x18
         }
 
         void getGJUserInfo(int something) {
