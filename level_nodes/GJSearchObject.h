@@ -15,6 +15,7 @@ namespace gd {
         kSearchTypeFeatured       = 6,
         kSearchTypeMagic          = 7,
         kSearchTypeMapPacks       = 9,
+        kSearchTypeMapPackList    = 10,
         kSearchTypeAwarded        = 11,
         kSearchTypeFollowed       = 12,
         kSearchTypeFriends        = 13,
