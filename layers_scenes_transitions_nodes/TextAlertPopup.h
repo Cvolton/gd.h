@@ -59,7 +59,7 @@ namespace gd {
                 strcpy_s(buf, _text);
 
                 return reinterpret_cast<TextAlertPopup*(__cdecl*)(
-                    const char[16], int, int
+                    char[16], int, int
                 )>( base + 0x1450b0 )(buf, strlen(_text), 15);
             }
     };
