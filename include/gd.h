@@ -104,6 +104,7 @@ enum FMOD_RESULT;
 #include "level_nodes/ColorAction.h"
 #include "level_nodes/GJComment.h"
 #include "level_nodes/GJChallengeItem.h"
+#include "level_nodes/GJRewardItem.h"
 
 #include "sprite_nodes/CCSpritePlus.h"
 #include "sprite_nodes/ColorActionSprite.h"
