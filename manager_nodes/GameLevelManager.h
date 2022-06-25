@@ -155,6 +155,10 @@ class GJGameLevel;
             }
         }
 
+        void resetCommentTimersForLevelID(int id, bool commentHistory) {
+            reinterpret_cast<void(__thiscall*)(GameLevelManager*, int, bool)>(base + 0xB3F10)(this, id, commentHistory);
+        }
+
         const char* getAccountCommentKey(int a2, int a3){
             return cocos2d::CCString::createWithFormat("a_%i_%i", a2, a3)->getCString();
         }
