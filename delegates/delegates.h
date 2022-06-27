@@ -70,6 +70,9 @@ namespace gd {
 
     enum LikeItemType {
         kLikeItemTypeUnknown,
+        kLikeItemTypeLevel,
+        kLikeItemTypeComment,
+        kLikeItemTypeAccountComment,
     };
 
     class LevelDownloadDelegate {

@@ -162,6 +162,13 @@ class GJGameLevel;
         const char* getAccountCommentKey(int a2, int a3){
             return cocos2d::CCString::createWithFormat("a_%i_%i", a2, a3)->getCString();
         }
+
+        bool hasLikedItemFullCheck(LikeItemType type, int id, int special) {
+            auto pRet = reinterpret_cast<cocos2d::CCDictionary*(__thiscall*)(GameLevelManager*, LikeItemType, int, int)>(base + 0xB86B0)(this, type, id, special);
+            return pRet;
+        }
+
+
     };
 
 }
