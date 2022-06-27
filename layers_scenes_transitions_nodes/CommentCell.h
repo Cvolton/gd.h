@@ -7,9 +7,9 @@ namespace gd {
 
     class GJComment;
 
-    class CommentCell : public cocos2d::CCLayer {
+    class CommentCell : public TableViewCell, public LikeItemDelegate, public FLAlertLayerProtocol {
     public:
-        PAD(89+16);
+        PAD(4);
         GJComment* comment;
         bool accountComment;
     };

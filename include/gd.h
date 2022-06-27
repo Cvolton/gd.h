@@ -65,7 +65,6 @@ enum FMOD_RESULT;
 #include "layers_scenes_transitions_nodes/ProfilePage.h"
 #include "layers_scenes_transitions_nodes/LevelInfoLayer.h"
 #include "layers_scenes_transitions_nodes/LevelCell.h"
-#include "layers_scenes_transitions_nodes/CommentCell.h"
 #include "layers_scenes_transitions_nodes/DailyLevelPage.h"
 #include "layers_scenes_transitions_nodes/LevelLeaderboard.h"
 #include "layers_scenes_transitions_nodes/LeaderboardsLayer.h"
@@ -77,6 +76,8 @@ enum FMOD_RESULT;
 #include "scroll_nodes/BoomListView.h"
 #include "scroll_nodes/CustomListView.h"
 #include "scroll_nodes/ScrollingLayer.h"
+
+#include "layers_scenes_transitions_nodes/CommentCell.h"
 
 #include "manager_nodes/GManager.h"
 #include "manager_nodes/GameManager.h"
