@@ -112,6 +112,10 @@ class GJGameLevel;
             reinterpret_cast<void(__thiscall*)(GameLevelManager*, GJSearchObject*)>(base + 0xA7BC0)(this, searchObj);
         }
 
+        void getLevelLeaderboard(GJGameLevel* level, int leaderboardType) {
+            reinterpret_cast<void(__thiscall*)(GameLevelManager*, GJGameLevel*, int)>(base + 0xAED70)(this, level, leaderboardType);
+        }
+
         void updateUserScore() {
             reinterpret_cast<void(__thiscall*)(GameLevelManager*)>(base + 0xADA60)(this);
         }
