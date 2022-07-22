@@ -6,15 +6,25 @@
 namespace gd {
 
     class GJSearchObject;
+    class TextArea;
 
-    class LevelBrowserLayer : public cocos2d::CCLayer {
+    class LevelBrowserLayer : public cocos2d::CCLayer, public LevelManagerDelegate, public FLAlertLayerProtocol, public SetIDPopupDelegate, public SetTextPopupDelegate {
     public:
-        PAD(312 - sizeof(cocos2d::CCLayer));
+        int unk0;
+        TextArea* noInternet;
+        GJListLayer* listLayer;
         CCMenuItemSpriteExtra* nextBtn;
         CCMenuItemSpriteExtra* prevBtn;
-        PAD(336 - 320);
+        CCMenuItemSpriteExtra* lastBtn;
+        CCMenuItemSpriteExtra* cancelSearchBtn;
+        void* unk4;
+        cocos2d::CCArray* array;
         GJSearchObject* searchObject;
-        PAD(360 - 340);
+        cocos2d::CCLabelBMFont* countText;
+        cocos2d::CCLabelBMFont* pageText;
+        CCMenuItemSpriteExtra* pageBtn;
+        cocos2d::CCLabelBMFont* folderText;
+        CCMenuItemSpriteExtra* folderBtn;
         int total;
         int from;
         int to;

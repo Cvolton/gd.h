@@ -85,6 +85,12 @@ namespace gd {
         virtual void levelDeleteFailed(int);
     };
 
+    class LevelManagerDelegate {
+        virtual void loadLevelsFinished(cocos2d::CCArray*, const char*) {};
+        virtual void loadLevelsFailed(const char*) {};
+        virtual void setupPageInfo(std::string, const char*) {};
+    };
+
     class LevelUpdateDelegate {
         virtual void levelUpdateFinished(GJGameLevel*, UpdateResponse);
         virtual void levelUpdateFailed(int);
@@ -119,6 +125,10 @@ namespace gd {
 
     class SetIDPopupDelegate {
         virtual void setIDPopupClosed(SetIDPopup*, int);
+    };
+
+    class SetTextPopupDelegate {
+        virtual void setIDPopupClosed(void*, std::string); //settextpopup
     };
 
     class GJDropDownLayerDelegate {
