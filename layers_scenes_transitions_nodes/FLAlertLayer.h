@@ -142,6 +142,15 @@ namespace gd {
 			__asm add esp, 0x2C
 			return pRet;
 		}
+		bool init(FLAlertLayerProtocol* target, const char* title,
+			const char* btn1, const char* btn2, float width, bool scroll, float height, std::string caption) {
+			auto pRet = reinterpret_cast<FLAlertLayer* (__thiscall*)(FLAlertLayer*, FLAlertLayerProtocol*, const char*,
+				const char*, const char*, float, bool, float, std::string)>(
+					base + 0x228E0
+					)(this, target, title, btn1, btn2, width, scroll, height, caption);
+			return pRet;
+			
+		}
 		void setParentFLAlert(cocos2d::CCObject* target){
 			m_pParent = target;
 			//m_pTarget = target;
