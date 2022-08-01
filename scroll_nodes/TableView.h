@@ -147,6 +147,22 @@ namespace gd {
             )(this, index);
         }
     };
+
+    class LevelCell : public TableViewCell {
+    public:
+        gd::GJGameLevel* level;
+
+        void loadFromLevel(GJGameLevel* level) {
+            reinterpret_cast<void(__thiscall*)(LevelCell*, GJGameLevel*)>(
+                base + 0x59FD0
+            )(this, level);
+        }
+        void updateBGColor(unsigned int index) {
+            reinterpret_cast<void(__thiscall*)(TableViewCell*, unsigned int)>(
+                base + 0x5C6B0
+            )(this, index);
+        }
+    };
 }
 
 #endif
