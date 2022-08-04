@@ -69,6 +69,20 @@ namespace gd {
             return pRet;
         }
 
+        const char* getKey() {
+            return reinterpret_cast<const char*(__thiscall*)(GJSearchObject*)>(
+                gd::base + 0xC30A0
+            )(this);
+        } 
+
+        const char* getNextPageKey() {
+            return reinterpret_cast<const char*(__thiscall*)(GJSearchObject*)>(
+                gd::base + 0xC31F0
+            )(this);
+        } 
+
+        //getSearchKey 0xC3490
+
         //this isnt a robtop function
         void setSongInfo(bool customSong, int songID) {
             m_bCustomSongFilter = customSong;
