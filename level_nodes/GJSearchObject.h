@@ -69,6 +69,12 @@ namespace gd {
             return pRet;
         }
 
+        static GJSearchObject* createFromKey(const char* key) {
+            return reinterpret_cast<GJSearchObject*(__fastcall*)(const char*)>(
+                gd::base + 0xC2760
+            )(key);
+        }
+
         const char* getKey() {
             return reinterpret_cast<const char*(__thiscall*)(GJSearchObject*)>(
                 gd::base + 0xC30A0
