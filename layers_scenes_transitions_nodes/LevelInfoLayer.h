@@ -10,10 +10,10 @@ namespace gd {
     class CCMenuItemToggler;
     class TextArea;
 
-    class LevelPage
+    class LevelPage : public cocos2d::CCLayer, public DialogDelegate
     {
         public:
-            PAD(292);
+            PAD(4);
             GJGameLevel* m_pLevel;
     };
 
