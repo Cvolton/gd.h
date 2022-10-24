@@ -7,10 +7,9 @@ namespace gd {
 
     class GJUserScore;
 
-    class ProfilePage : public gd::FLAlertLayer {
+    class ProfilePage : public gd::FLAlertLayer, public FLAlertLayerProtocol, public LevelCommentDelegate, public CommentUploadDelegate, public UserInfoDelegate, public UploadActionDelegate, public UploadPopupDelegate, public LeaderboardManagerDelegate {
     public:
         //PAD(472 - sizeof(gd::FLAlertLayer));
-        PAD(488 - sizeof(gd::FLAlertLayer));
         gd::GJUserScore* score; //488-492
         int something; //492-496
         PAD(552 - 496); //this is at 532 on android???
@@ -21,13 +20,13 @@ namespace gd {
             return reinterpret_cast<ProfilePage*(__fastcall*)(int, bool)>(
                 gd::base + 0x20EE50
             )(accountID, a2);
-        }
-
-        ProfilePage* loadPageFromUserInfo(gd::GJUserScore* score) {
-            return reinterpret_cast<ProfilePage*(__fastcall*)(ProfilePage*, gd::GJUserScore*)>(
-                gd::base + 0x210040
-            )(this, score);
         }*/
+
+        void getUserInfoChanged(gd::GJUserScore* score) {
+            reinterpret_cast<void*(__fastcall*)(ProfilePage*, gd::GJUserScore*)>(
+                gd::base + 0x213430
+            )(this, score);
+        }
 
         //onUpdate 0x20FA20
     };

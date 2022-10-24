@@ -5,6 +5,7 @@
 
 namespace gd {
     class GJGameLevel;
+    class GJUserScore;
     class NumberInputLayer;
     class SetIDPopup;
     class CCTextInputNode;
@@ -149,6 +150,32 @@ namespace gd {
 
     class DialogDelegate {
         virtual void dialogClosed(DialogLayer*);
+    };
+
+    class LevelCommentDelegate {
+        virtual void loadCommentsFinished(cocos2d::CCArray *, const char*)  {}
+        virtual void loadCommentsFailed(const char*)  {}
+        virtual void updateUserScoreFinished()  {}
+        virtual void setupPageInfo(std::string, const char*)  {}
+    };
+
+    class CommentUploadDelegate {
+        virtual void commentUploadFinished(int) {}
+        virtual void commentUploadFailed(int, int) {}
+        virtual void commentDeleteFailed(int, int) {}
+    };
+
+    class UserInfoDelegate {
+        virtual void getUserInfoFinished(GJUserScore *) {}
+        virtual void getUserInfoFailed(int) {}
+        virtual void getUserInfoChanged(GJUserScore *) {}
+    };
+
+    class LeaderboardManagerDelegate {
+        virtual void updateUserScoreFinished() {}
+        virtual void updateUserScoreFailed() {}
+        virtual void loadLeaderboardFinished(cocos2d::CCArray*, const char*) {}
+        virtual void loadLeaderboardFailed(const char*) {}
     };
 }
 
