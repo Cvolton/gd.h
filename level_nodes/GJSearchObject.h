@@ -27,6 +27,7 @@ namespace gd {
         kSearchType19             = 19,
         kSearchTypeDaily          = 21,
         kSearchTypeWeekly         = 22,
+        kSearchType26             = 26,
         kSearchTypeMyLevels       = 98,
         kSearchTypeSavedLevels    = 99,
         kSearchTypeFavorite       = 100,
