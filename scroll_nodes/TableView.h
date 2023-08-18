@@ -134,6 +134,16 @@ namespace gd {
 
 	class GJScoreCell : public TableViewCell {
     public:
+
+		GJScoreCell(const char* name, float width, float height) : TableViewCell(name, width, height) {
+			__asm {
+				movss xmm2, width
+				movss xmm3, height
+			}
+			reinterpret_cast<void(__thiscall*)(GJScoreCell*, const char*)>(
+				base + 0x613C0
+			)(this, name);
+		}
     	//0x62380 onViewProfile
     	//0x624A0 FLAlert_Clicked
         void loadFromScore(GJUserScore* score) {
@@ -152,6 +162,15 @@ namespace gd {
     public:
         gd::GJGameLevel* level;
 
+		LevelCell(const char* name, float width, float height) : TableViewCell(name, width, height) {
+			__asm {
+				movss xmm2, width
+				movss xmm3, height
+			}
+			reinterpret_cast<void(__thiscall*)(LevelCell*, const char*)>(
+				base + 0x59F40
+			)(this, name);
+		}
         void loadFromLevel(GJGameLevel* level) {
             reinterpret_cast<void(__thiscall*)(LevelCell*, GJGameLevel*)>(
                 base + 0x59FD0
