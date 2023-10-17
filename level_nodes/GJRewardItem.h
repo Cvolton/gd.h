@@ -11,6 +11,8 @@ namespace gd {
         kGJRewardTypeUnknown = 0x0,
         kGJRewardTypeSmall = 0x1,
         kGJRewardTypeLarge = 0x2,
+        kGJRewardTypeSmallTreasure = 0x3,
+        kGJRewardTypeLargeTreasure = 0x4
     };
 
     //i stole gjrewarditem from wylies gd decompiled
